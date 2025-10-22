@@ -10,6 +10,10 @@ const USER = {
   password: "12345",
 };
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend server is running!");
+});
+
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
@@ -20,9 +24,6 @@ app.post("/login", (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
-
-app.get("/", (req, res) => {
-  res.send("Backend server is running!");
-});
+//const PORT = process.env.PORT || 5000;
+//app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+module.exports = app;
